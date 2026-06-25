@@ -1,4 +1,4 @@
-# HUAKO Garlic — Export Landing Page
+# 中国优质大蒜出口 — Landing Page
 
 中国优质大蒜出口展示落地页。
 

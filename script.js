@@ -1,5 +1,5 @@
 /**
- * HUAKO Garlic — Redesigned Interactions
+ * Garlic Export — Redesigned Interactions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
