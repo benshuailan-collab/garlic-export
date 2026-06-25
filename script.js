@@ -1,40 +1,44 @@
 /**
- * HUAKO Garlic — Landing Page
- * Interactive Features
+ * HUAKO Garlic — Redesigned Interactions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
-    // Navbar scroll effect
+    // Preloader
+    // ==========================================
+    const preloader = document.getElementById('preloader');
+    const progress = preloader.querySelector('.preloader-progress');
+    let prog = 0;
+    const loadInterval = setInterval(() => {
+        prog += Math.random() * 30;
+        if (prog > 100) prog = 100;
+        progress.style.width = prog + '%';
+        if (prog >= 100) {
+            clearInterval(loadInterval);
+            setTimeout(() => preloader.classList.add('done'), 400);
+        }
+    }, 200);
+
+    // ==========================================
+    // Navbar scroll
     // ==========================================
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 60) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        lastScroll = currentScroll;
+        navbar.classList.toggle('scrolled', window.pageYOffset > 50);
     });
 
     // ==========================================
-    // Mobile menu toggle
+    // Mobile menu
     // ==========================================
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const spans = menuToggle.querySelectorAll('span');
-
-        if (navMenu.classList.contains('active')) {
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        const spans = menuBtn.querySelectorAll('span');
+        if (mobileMenu.classList.contains('open')) {
             spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
             spans[1].style.opacity = '0';
             spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
@@ -45,11 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close mobile menu on link click
-    navLinks.forEach(link => {
+    mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            const spans = menuToggle.querySelectorAll('span');
+            mobileMenu.classList.remove('open');
+            const spans = menuBtn.querySelectorAll('span');
             spans[0].style.transform = 'none';
             spans[1].style.opacity = '1';
             spans[2].style.transform = 'none';
@@ -57,194 +60,124 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // Scroll reveal animations
+    // Scroll animations
     // ==========================================
-    const revealElements = document.querySelectorAll(
-        '.product-card, .advantage-card, .market-card, .process-card, .cert-card, .about-image-wrapper, .about-content'
-    );
-
-    revealElements.forEach(el => {
-        el.classList.add('reveal');
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
+    const animElements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
+                const delay = entry.target.getAttribute('data-delay') || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, parseInt(delay));
+                observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    animElements.forEach(el => observer.observe(el));
 
     // ==========================================
     // Counter animation
     // ==========================================
-    const statNumbers = document.querySelectorAll('.stat-number');
-
+    const counters = document.querySelectorAll('[data-target]');
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const target = parseInt(el.getAttribute('data-count'));
+                const target = parseInt(el.getAttribute('data-target'));
                 const duration = 2000;
-                const startTime = performance.now();
+                const start = performance.now();
 
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
+                function update(now) {
+                    const elapsed = now - start;
                     const progress = Math.min(elapsed / duration, 1);
-
-                    // Ease out cubic
                     const eased = 1 - Math.pow(1 - progress, 3);
                     const current = Math.floor(eased * target);
-
-                    if (target >= 1000) {
-                        el.textContent = (current / 1000).toFixed(1) + 'k';
-                        if (progress === 1) {
-                            el.textContent = (target / 1000).toFixed(1) + 'k+';
-                        }
-                    } else {
-                        el.textContent = current;
-                        if (progress === 1) {
-                            el.textContent = target + '+';
-                        }
-                    }
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    }
+                    el.textContent = current.toLocaleString();
+                    if (progress < 1) requestAnimationFrame(update);
                 }
-
-                requestAnimationFrame(updateCounter);
+                requestAnimationFrame(update);
                 counterObserver.unobserve(el);
             }
         });
     }, { threshold: 0.5 });
 
-    statNumbers.forEach(el => counterObserver.observe(el));
+    counters.forEach(el => counterObserver.observe(el));
 
     // ==========================================
-    // Contact form handling
+    // Smooth scroll
     // ==========================================
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-
-            // Simple validation
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-
-            if (!name || !email) {
-                showToast('请填写必填字段（姓名和邮箱）', 'warning');
-                return;
-            }
-
-            if (!isValidEmail(email)) {
-                showToast('请输入有效的邮箱地址', 'warning');
-                return;
-            }
-
-            // Show sending state
-            submitBtn.innerHTML = '⏳ 发送中...';
-            submitBtn.disabled = true;
-
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                showToast('✅ 询价已发送！我们将在24小时内回复您');
-                contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
-    }
-
-    // ==========================================
-    // Smooth scroll for all anchor links
-    // ==========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const target = document.querySelector(targetId);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const id = a.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
             if (target) {
                 e.preventDefault();
-                const offset = 80;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
     // ==========================================
-    // Active nav link highlighting
+    // Active nav highlight
     // ==========================================
     const sections = document.querySelectorAll('section[id]');
-
     window.addEventListener('scroll', () => {
         let current = '';
-        const scrollPos = window.pageYOffset + 100;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
+        sections.forEach(s => {
+            if (window.pageYOffset >= s.offsetTop - 200) {
+                current = s.getAttribute('id');
             }
         });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.style.color = '';
-            if (link.getAttribute('href') === '#' + current) {
-                link.style.color = navbar.classList.contains('scrolled')
-                    ? 'var(--primary)'
-                    : 'var(--accent-light)';
-            }
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
         });
     });
-});
 
-// ==========================================
-// Utility functions
-// ==========================================
+    // ==========================================
+    // Contact form
+    // ==========================================
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '发送中...';
+            btn.disabled = true;
 
-function showToast(message, type = 'success') {
-    // Remove existing toast
-    const existing = document.querySelector('.toast');
-    if (existing) existing.remove();
-
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.textContent = message;
-
-    if (type === 'warning') {
-        toast.style.background = '#d97706';
+            setTimeout(() => {
+                showToast('✅ 询价已收到！我们将在 24 小时内回复您');
+                form.reset();
+                btn.innerHTML = orig;
+                btn.disabled = false;
+            }, 1200);
+        });
     }
 
-    document.body.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateY(20px)';
-        toast.style.transition = 'all 0.3s ease';
-        setTimeout(() => toast.remove(), 300);
-    }, 3500);
-}
-
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+    // ==========================================
+    // Toast
+    // ==========================================
+    function showToast(msg) {
+        const existing = document.querySelector('.toast-msg');
+        if (existing) existing.remove();
+        const toast = document.createElement('div');
+        toast.className = 'toast-msg';
+        toast.textContent = msg;
+        Object.assign(toast.style, {
+            position: 'fixed', bottom: '2rem', right: '2rem', zIndex: '99999',
+            background: '#2D5016', color: '#fff', padding: '1rem 2rem',
+            borderRadius: '10px', fontWeight: '600', fontSize: '0.9rem',
+            boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
+            animation: 'fadeInUp 0.4s ease-out',
+        });
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.style.opacity = '0'; toast.style.transform = 'translateY(20px)';
+            toast.style.transition = 'all 0.3s';
+            setTimeout(() => toast.remove(), 300);
+        }, 3500);
+    }
+});

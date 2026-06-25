@@ -3,136 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HUAKO Garlic — 中国山东优质大蒜出口商，专注纯白蒜、杂交蒜等品类，远销中东、非洲、东南亚、欧洲等30+国家。专业品质，值得信赖。">
-    <meta name="keywords" content="大蒜出口, 中国大蒜, 山东大蒜, 纯白蒜, 杂交蒜, 农产品出口, garlic export, Chinese garlic">
+    <meta name="description" content="HUAKO Garlic — 中国山东优质大蒜出口商，专注纯白蒜、杂交蒜等品类，远销全球30+国家。">
+    <meta name="keywords" content="大蒜出口, 中国大蒜, 山东大蒜, 纯白蒜, garlic export, Chinese garlic">
     <meta property="og:title" content="HUAKO Garlic — 中国优质大蒜出口">
     <meta property="og:description" content="山东产地直供，专业大蒜出口服务，远销全球30+国家">
-    <meta property="og:image" content="images/Professional_premium_garlic_di_2026-06-25T23-00-45.png">
     <meta property="og:type" content="website">
     <title>HUAKO Garlic — 中国优质大蒜出口商</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🧄</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">🧄</div>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-icon">🧄</span>
-                <span>HUAKO Garlic</span>
+        <div class="nav-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="16" cy="20" rx="10" ry="12" fill="#4A7C2E"/>
+                        <ellipse cx="16" cy="20" rx="8" ry="10" fill="#5FA03C"/>
+                        <path d="M16 8 C16 4 19 2 20 4 C21 6 18 8 16 8Z" fill="#3D6B1E"/>
+                        <path d="M16 8 C16 5 12 2 11 4 C10 6 13 8 16 8Z" fill="#3D6B1E"/>
+                        <path d="M18 4 C19 1 22 2 21 5" stroke="#2D5016" stroke-width="0.8" fill="none"/>
+                        <path d="M14 4 C13 1 10 2 11 5" stroke="#2D5016" stroke-width="0.8" fill="none"/>
+                    </svg>
+                </span>
+                <span class="logo-text">HUAKO</span>
             </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#products">产品中心</a></li>
+                <li><a href="#why">核心优势</a></li>
+                <li><a href="#markets">全球市场</a></li>
+                <li><a href="#contact" class="nav-cta">联系我们</a></li>
+            </ul>
+            <button class="menu-btn" id="menuBtn" aria-label="菜单">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">首页</a></li>
-                <li><a href="#about" class="nav-link">关于我们</a></li>
-                <li><a href="#products" class="nav-link">产品展示</a></li>
-                <li><a href="#advantages" class="nav-link">核心优势</a></li>
-                <li><a href="#markets" class="nav-link">全球市场</a></li>
-                <li><a href="#contact" class="btn btn-nav">询价咨询</a></li>
-            </ul>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#about" class="mobile-link">关于我们</a>
+            <a href="#products" class="mobile-link">产品中心</a>
+            <a href="#why" class="mobile-link">核心优势</a>
+            <a href="#markets" class="mobile-link">全球市场</a>
+            <a href="#contact" class="mobile-link mobile-cta">联系我们</a>
+        </div>
+    </div>
+
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-bg"></div>
-            <div class="hero-overlay"></div>
+        <!-- Hero -->
+        <section id="hero" class="hero">
+            <div class="hero-pattern"></div>
+            <div class="hero-glow"></div>
             <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">🌍 出口 30+ 国家</span>
-                    <h1 class="hero-title">
-                        中国优质大蒜<br>
-                        <span class="hero-highlight">全球信赖之选</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        源自山东菏泽核心产区，专注纯白蒜、杂交蒜等优质品类出口。
-                        从田间到港口，全程品控，为全球客户提供最具竞争力的大蒜供应链解决方案。
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number" data-count="15">0</span>
-                            <span class="stat-label">年出口经验</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" data-count="30">0</span>
-                            <span class="stat-label">出口国家</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" data-count="50000">0</span>
-                            <span class="stat-label">年出口量(吨)</span>
-                        </div>
+                <div class="hero-left">
+                    <div class="hero-tag" data-animate="fade-up">
+                        <span class="tag-dot"></span>
+                        中国 · 山东 · 大蒜出口专家
                     </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary btn-large">
-                            获取报价 <span class="arrow">→</span>
+                    <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                        来自中国产地的<br>
+                        <span class="text-gradient">优质大蒜</span><br>
+                        走向世界餐桌
+                    </h1>
+                    <p class="hero-desc" data-animate="fade-up" data-delay="200">
+                        坐落于大蒜核心产区山东菏泽，HUAKO 集种植、加工、出口于一体，
+                        为全球 30+ 国家提供稳定优质的大蒜供应链服务。
+                    </p>
+                    <div class="hero-btns" data-animate="fade-up" data-delay="300">
+                        <a href="#contact" class="btn btn-primary">
+                            获取报价
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
-                        <a href="#products" class="btn btn-outline btn-large">
-                            查看产品
-                        </a>
+                        <a href="#products" class="btn btn-outline">了解产品</a>
+                    </div>
+                    <div class="hero-stats" data-animate="fade-up" data-delay="400">
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="15">0</span>
+                            <span class="stat-suffix">年+</span>
+                            <span class="stat-label">出口经验</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="30">0</span>
+                            <span class="stat-suffix">国+</span>
+                            <span class="stat-label">出口目的地</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="50000">0</span>
+                            <span class="stat-suffix">吨+</span>
+                            <span class="stat-label">年出口量</span>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-image-wrapper">
-                        <img src="images/Professional_premium_garlic_di_2026-06-25T23-00-45.png" alt="HUAKO 优质大蒜" loading="eager">
-                        <div class="hero-card-float card-1">
-                            <span class="float-icon">🏆</span>
-                            <span>品质认证</span>
+                <div class="hero-right" data-animate="fade-left">
+                    <div class="hero-visual">
+                        <div class="visual-ring ring-1"></div>
+                        <div class="visual-ring ring-2"></div>
+                        <div class="visual-ring ring-3"></div>
+                        <div class="visual-main">
+                            <div class="garlic-illustration">
+                                <div class="garlic-bulb">
+                                    <div class="garlic-clove c1"></div>
+                                    <div class="garlic-clove c2"></div>
+                                    <div class="garlic-clove c3"></div>
+                                    <div class="garlic-clove c4"></div>
+                                    <div class="garlic-clove c5"></div>
+                                    <div class="garlic-center"></div>
+                                </div>
+                                <div class="garlic-shadow"></div>
+                            </div>
                         </div>
-                        <div class="hero-card-float card-2">
-                            <span class="float-icon">🚢</span>
-                            <span>全球直送</span>
+                        <div class="visual-badge badge-1">
+                            <span class="badge-icon">🏆</span>
+                            <div>
+                                <strong>ISO22000</strong>
+                                <small>品质认证</small>
+                            </div>
+                        </div>
+                        <div class="visual-badge badge-2">
+                            <span class="badge-icon">🌍</span>
+                            <div>
+                                <strong>30+ 国家</strong>
+                                <small>全球客户</small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <span></span>
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+                <span>向下滚动</span>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about" class="section">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-image-wrapper">
-                        <img src="images/Chinese_garlic_farm_field_land_2026-06-25T23-01-17.png" alt="山东大蒜种植基地" loading="lazy">
-                        <div class="about-experience">
-                            <span class="exp-number">15+</span>
-                            <span class="exp-label">年专业经验</span>
+                    <div class="about-visual" data-animate="fade-right">
+                        <div class="about-img-box">
+                            <div class="img-placeholder farm">
+                                <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="400" height="300" rx="16" fill="#E8F5E3"/>
+                                    <circle cx="320" cy="60" r="40" fill="#FFF3CD" opacity="0.8"/>
+                                    <path d="M0 220 Q100 160 200 200 Q300 240 400 180 L400 300 L0 300Z" fill="#4A7C2E" opacity="0.3"/>
+                                    <path d="M0 240 Q100 180 200 220 Q300 260 400 200 L400 300 L0 300Z" fill="#5FA03C" opacity="0.4"/>
+                                    <rect x="150" y="140" width="100" height="80" rx="4" fill="#8B6F3D" opacity="0.6"/>
+                                    <rect x="160" y="120" width="80" height="25" rx="2" fill="#A0875A" opacity="0.5"/>
+                                    <g opacity="0.7">
+                                        <path d="M50 250 L50 200" stroke="#3D6B1E" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M50 210 C40 200 30 210 35 215" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                        <path d="M50 215 C60 205 70 215 65 220" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                    </g>
+                                    <g opacity="0.7">
+                                        <path d="M120 250 L120 190" stroke="#3D6B1E" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M120 200 C110 185 100 195 108 200" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                        <path d="M120 195 C130 180 140 195 132 200" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                    </g>
+                                    <g opacity="0.7">
+                                        <path d="M280 250 L280 195" stroke="#3D6B1E" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M280 205 C270 190 260 200 268 205" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                        <path d="M280 200 C290 185 300 200 292 205" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                    </g>
+                                    <g opacity="0.7">
+                                        <path d="M350 250 L350 200" stroke="#3D6B1E" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M350 210 C340 195 330 205 338 210" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                        <path d="M350 208 C360 193 370 208 362 212" stroke="#3D6B1E" stroke-width="2" fill="none"/>
+                                    </g>
+                                    <text x="200" y="290" text-anchor="middle" fill="#5FA03C" font-size="14" font-weight="600">山东大蒜种植基地</text>
+                                </svg>
+                            </div>
+                            <div class="about-exp-badge">
+                                <span class="exp-year">15+</span>
+                                <span class="exp-text">年专业<br>大蒜出口</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="about-content">
-                        <span class="section-tag">关于我们</span>
-                        <h2 class="section-title">山东产地直供<br>品质从源头把控</h2>
-                        <p class="about-text">
-                            HUAKO Garlic 坐落于中国大蒜核心产区——山东省菏泽市成武县。依托得天独厚的地理气候条件与深厚的农业传统，我们建立起从种植、加工到出口的完整产业链。
+                    <div class="about-text" data-animate="fade-left">
+                        <span class="section-tag">关于 HUAKO</span>
+                        <h2 class="section-title">从山东田间<br>到全球餐桌</h2>
+                        <p>
+                            HUAKO Garlic 位于中国大蒜之乡——山东省菏泽市成武县。
+                            这里日照充足、土壤肥沃，产出的大蒜蒜头大、瓣少而匀、辣味浓郁、品质上乘。
                         </p>
-                        <p class="about-text">
-                            我们与当地 200+ 农户建立长期合作，拥有现代化冷库仓储及自动化分拣线，确保每一颗出口大蒜都达到国际质量标准。
+                        <p>
+                            我们建立了从种植基地、冷库仓储到自动化分拣包装的完整产业链，
+                            确保每一批出口产品都符合国际标准，让全球客户买得放心、用得满意。
                         </p>
                         <div class="about-features">
-                            <div class="about-feat">
-                                <span class="feat-icon">🌱</span>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
                                 <div>
-                                    <strong>源头种植</strong>
-                                    <p>自有合作种植基地 5000+ 亩</p>
+                                    <h4>产地直供</h4>
+                                    <p>合作基地 5000+ 亩，源头把控品质</p>
                                 </div>
                             </div>
-                            <div class="about-feat">
-                                <span class="feat-icon">🏭</span>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
                                 <div>
-                                    <strong>自有加工</strong>
-                                    <p>现代化分拣包装流水线</p>
+                                    <h4>品质认证</h4>
+                                    <p>ISO22000 / HACCP / GAP 齐全</p>
                                 </div>
                             </div>
-                            <div class="about-feat">
-                                <span class="feat-icon">❄️</span>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                                </div>
                                 <div>
-                                    <strong>冷链仓储</strong>
-                                    <p>2000 吨恒温冷库保障</p>
+                                    <h4>全球物流</h4>
+                                    <p>青岛港/连云港双港发运，准时交付</p>
                                 </div>
                             </div>
                         </div>
@@ -141,300 +239,357 @@
             </div>
         </section>
 
-        <!-- Products Section -->
+        <!-- Products -->
         <section id="products" class="section section-alt">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">产品展示</span>
-                    <h2 class="section-title">多品类大蒜 · 满足全球需求</h2>
-                    <p class="section-subtitle">从常规白蒜到精品纯白蒜，我们提供全品类大蒜出口方案</p>
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag light">产品中心</span>
+                    <h2 class="section-title">多品类大蒜<br>满足全球市场需求</h2>
+                    <p class="section-desc">我们提供全品类大蒜产品，支持规格定制与品牌代工</p>
                 </div>
                 <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <div class="product-img-placeholder" style="background: linear-gradient(135deg, #f5f0e8, #e8e0d0);">
-                                <span class="product-emoji">🧄</span>
+                    <!-- Product 1 -->
+                    <div class="product-card" data-animate="fade-up">
+                        <div class="product-visual">
+                            <div class="product-shape">
+                                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="110" r="50" fill="#5FA03C"/>
+                                    <circle cx="100" cy="110" r="40" fill="#7DBF54"/>
+                                    <ellipse cx="100" cy="80" rx="18" ry="22" fill="#4A7C2E" transform="rotate(-5 100 80)"/>
+                                    <ellipse cx="118" cy="95" rx="16" ry="20" fill="#4A7C2E" transform="rotate(15 118 95)"/>
+                                    <ellipse cx="100" cy="115" rx="18" ry="22" fill="#4A7C2E"/>
+                                    <ellipse cx="82" cy="100" rx="16" ry="20" fill="#4A7C2E" transform="rotate(-15 82 100)"/>
+                                    <ellipse cx="112" cy="115" rx="14" ry="18" fill="#4A7C2E" transform="rotate(20 112 115)"/>
+                                    <path d="M100 60 C100 50 108 42 110 48 C112 54 104 60 100 60Z" fill="#3D6B1E"/>
+                                    <path d="M100 60 C100 50 92 42 90 48 C88 54 96 60 100 60Z" fill="#3D6B1E"/>
+                                </svg>
                             </div>
-                            <span class="product-badge">热销</span>
+                            <span class="product-badge hot">热销</span>
                         </div>
                         <div class="product-info">
                             <h3>纯白蒜</h3>
-                            <p class="product-desc">蒜头洁白饱满，瓣大均匀，口感辛辣浓郁。国际市场需求旺盛，适合中东、非洲及欧洲市场。</p>
-                            <div class="product-specs">
-                                <span>规格: 5.0cm / 5.5cm / 6.0cm+</span>
-                                <span>包装: 10kg网袋 / 20kg纸箱</span>
+                            <p>蒜头洁白饱满，辣味浓郁，耐储存。适合中东、欧洲及东南亚高端市场。</p>
+                            <div class="product-meta">
+                                <span class="meta-item">📏 5.0cm / 5.5cm / 6.0cm+</span>
+                                <span class="meta-item">📦 10kg网袋 / 20kg纸箱</span>
                             </div>
-                            <a href="#contact" class="btn btn-product">询价 →</a>
+                            <a href="#contact" class="product-link">询价咨询 →</a>
                         </div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <div class="product-img-placeholder" style="background: linear-gradient(135deg, #f0ede8, #e5ddd0);">
-                                <span class="product-emoji">🧅</span>
+                    <!-- Product 2 -->
+                    <div class="product-card" data-animate="fade-up" data-delay="100">
+                        <div class="product-visual">
+                            <div class="product-shape purple">
+                                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="110" r="50" fill="#8B6F3D"/>
+                                    <circle cx="100" cy="110" r="40" fill="#A0875A"/>
+                                    <ellipse cx="100" cy="80" rx="18" ry="22" fill="#7A5D2C" transform="rotate(-5 100 80)"/>
+                                    <ellipse cx="118" cy="95" rx="16" ry="20" fill="#7A5D2C" transform="rotate(15 118 95)"/>
+                                    <ellipse cx="100" cy="115" rx="18" ry="22" fill="#7A5D2C"/>
+                                    <ellipse cx="82" cy="100" rx="16" ry="20" fill="#7A5D2C" transform="rotate(-15 82 100)"/>
+                                    <path d="M100 60 C100 50 108 42 110 48 C112 54 104 60 100 60Z" fill="#6B4E1F"/>
+                                    <path d="M100 60 C100 50 92 42 90 48 C88 54 96 60 100 60Z" fill="#6B4E1F"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3>杂交蒜</h3>
-                            <p class="product-desc">抗病性强、耐储存、产量高。蒜瓣紧实、色泽紫红，风味独特，性价比优异。</p>
-                            <div class="product-specs">
-                                <span>规格: 5.0cm / 5.5cm / 6.0cm</span>
-                                <span>包装: 10kg网袋 / 20kg纸箱</span>
+                            <p>抗病性强，产量高，风味独特。性价比优异，适合大宗采购。</p>
+                            <div class="product-meta">
+                                <span class="meta-item">📏 5.0cm / 5.5cm / 6.0cm</span>
+                                <span class="meta-item">📦 10kg网袋 / 20kg纸箱</span>
                             </div>
-                            <a href="#contact" class="btn btn-product">询价 →</a>
+                            <a href="#contact" class="product-link">询价咨询 →</a>
                         </div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <div class="product-img-placeholder" style="background: linear-gradient(135deg, #eeece5, #ded8cc);">
-                                <span class="product-emoji">🧄</span>
+                    <!-- Product 3 -->
+                    <div class="product-card" data-animate="fade-up" data-delay="200">
+                        <div class="product-visual">
+                            <div class="product-shape light">
+                                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="60" y="70" width="80" height="50" rx="8" fill="#E8F5E3"/>
+                                    <rect x="65" y="75" width="70" height="40" rx="4" fill="#fff"/>
+                                    <circle cx="85" cy="95" r="8" fill="#F5E6C8" opacity="0.8"/>
+                                    <circle cx="105" cy="95" r="8" fill="#F5E6C8" opacity="0.8"/>
+                                    <circle cx="125" cy="95" r="8" fill="#F5E6C8" opacity="0.8"/>
+                                    <text x="100" y="140" text-anchor="middle" fill="#5FA03C" font-size="12" font-weight="600">脱水蒜片</text>
+                                </svg>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>脱水蒜片</h3>
-                            <p class="product-desc">选用优质鲜蒜，先进脱水工艺加工。保持大蒜天然风味与营养，食品加工行业首选原料。</p>
-                            <div class="product-specs">
-                                <span>规格: 片状 / 粒状 / 粉状</span>
-                                <span>包装: 25kg纸箱内衬PE袋</span>
+                            <h3>脱水蒜制品</h3>
+                            <p>选用优质鲜蒜，先进工艺脱水加工。保持天然风味，食品工业首选。</p>
+                            <div class="product-meta">
+                                <span class="meta-item">📏 蒜片 / 蒜粒 / 蒜粉</span>
+                                <span class="meta-item">📦 25kg纸箱 PE内衬</span>
                             </div>
-                            <a href="#contact" class="btn btn-product">询价 →</a>
+                            <a href="#contact" class="product-link">询价咨询 →</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Advantages Section -->
-        <section id="advantages" class="section">
+        <!-- Why Choose Us -->
+        <section id="why" class="section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-animate="fade-up">
                     <span class="section-tag">核心优势</span>
                     <h2 class="section-title">为什么选择 HUAKO</h2>
-                    <p class="section-subtitle">六大核心能力，为您的采购保驾护航</p>
                 </div>
-                <div class="advantages-grid">
-                    <div class="advantage-card">
-                        <div class="adv-icon">🏅</div>
-                        <h3>品质保证</h3>
-                        <p>严格品控体系，每批产品出厂前经多道检验，确保符合目的国进口标准</p>
+                <div class="why-grid">
+                    <div class="why-card" data-animate="fade-up">
+                        <div class="why-num">01</div>
+                        <div class="why-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2L4 9v10l10 7 10-7V9L14 2z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M14 14l10-5M14 14v10M14 14L4 9" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </div>
+                        <h3>源头可控</h3>
+                        <p>自有合作种植基地，从土壤到出货全程可追溯，品质稳定有保障。</p>
                     </div>
-                    <div class="advantage-card">
-                        <div class="adv-icon">💰</div>
-                        <h3>价格竞争力</h3>
-                        <p>产地直供，去中间环节。规模化采购与高效物流，为客户提供最优报价</p>
+                    <div class="why-card" data-animate="fade-up" data-delay="50">
+                        <div class="why-num">02</div>
+                        <div class="why-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M14 8v6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>准时交付</h3>
+                        <p>青岛港/连云港战略合作，船期灵活，确保按时按量送达目的港。</p>
                     </div>
-                    <div class="advantage-card">
-                        <div class="adv-icon">🚢</div>
-                        <h3>物流保障</h3>
-                        <p>与多家国际航运公司战略合作，青岛港/连云港双港发运，确保准时交货</p>
+                    <div class="why-card" data-animate="fade-up" data-delay="100">
+                        <div class="why-num">03</div>
+                        <div class="why-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20l6-8 5 4 9-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="4" r="2" fill="currentColor"/></svg>
+                        </div>
+                        <h3>价格优势</h3>
+                        <p>产地直供，规模化采购，去中间环节，为客户提供最具竞争力报价。</p>
                     </div>
-                    <div class="advantage-card">
-                        <div class="adv-icon">📋</div>
-                        <h3>资质齐全</h3>
-                        <p>ISO22000 / HACCP / GAP 认证，可配合客户完成目的国注册及清真认证</p>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="adv-icon">🎯</div>
+                    <div class="why-card" data-animate="fade-up" data-delay="150">
+                        <div class="why-num">04</div>
+                        <div class="why-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 12h20" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v16" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </div>
                         <h3>定制服务</h3>
-                        <p>支持 OEM 品牌定制、规格定制、包装定制，灵活满足不同市场需求</p>
+                        <p>支持 OEM 品牌定制、规格定制、包装定制，灵活满足不同市场需求。</p>
                     </div>
-                    <div class="advantage-card">
-                        <div class="adv-icon">🤝</div>
-                        <h3>全程服务</h3>
-                        <p>从询盘到清关，专业外贸团队全程跟进，中英文双语无障碍沟通</p>
+                    <div class="why-card" data-animate="fade-up" data-delay="200">
+                        <div class="why-num">05</div>
+                        <div class="why-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4a6 6 0 016 6c0 4-6 10-6 10S8 14 8 10a6 6 0 016-6z" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="10" r="2" fill="currentColor"/></svg>
+                        </div>
+                        <h3>全球网络</h3>
+                        <p>产品远销 30+ 国家，熟悉各目的港清关要求，提供一站式服务。</p>
+                    </div>
+                    <div class="why-card" data-animate="fade-up" data-delay="250">
+                        <div class="why-num">06</div>
+                        <div class="why-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14h16M6 14l4-4M6 14l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 14l-4-4M22 14l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </div>
+                        <h3>专业团队</h3>
+                        <p>外贸团队经验丰富，中英文双语沟通，响应及时，服务周到。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Markets Section -->
+        <!-- Markets -->
         <section id="markets" class="section section-dark">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-animate="fade-up">
                     <span class="section-tag light">全球市场</span>
-                    <h2 class="section-title light">产品远销全球 30+ 国家</h2>
-                    <p class="section-subtitle light">深耕国际市场，与各国客户建立长期稳定合作关系</p>
+                    <h2 class="section-title light">产品远销 30+ 国家</h2>
+                    <p class="section-desc light">深耕国际市场，与各国客户建立长期稳定合作关系</p>
                 </div>
                 <div class="markets-grid">
-                    <div class="market-card">
-                        <div class="market-region">🌍 中东</div>
-                        <div class="market-countries">阿联酋 · 沙特 · 卡塔尔 · 阿曼 · 科威特 · 伊拉克</div>
+                    <div class="market-card" data-animate="fade-up">
+                        <div class="market-flag">🇦🇪</div>
+                        <h3>中东</h3>
+                        <p>阿联酋 · 沙特 · 卡塔尔 · 阿曼 · 科威特 · 伊拉克</p>
                     </div>
-                    <div class="market-card">
-                        <div class="market-region">🌍 非洲</div>
-                        <div class="market-countries">埃及 · 阿尔及利亚 · 南非 · 肯尼亚 · 尼日利亚</div>
+                    <div class="market-card" data-animate="fade-up" data-delay="50">
+                        <div class="market-flag">🇪🇬</div>
+                        <h3>非洲</h3>
+                        <p>埃及 · 阿尔及利亚 · 南非 · 肯尼亚 · 尼日利亚</p>
                     </div>
-                    <div class="market-card">
-                        <div class="market-region">🌏 东南亚</div>
-                        <div class="market-countries">马来西亚 · 印尼 · 菲律宾 · 越南 · 泰国 · 新加坡</div>
+                    <div class="market-card" data-animate="fade-up" data-delay="100">
+                        <div class="market-flag">🇲🇾</div>
+                        <h3>东南亚</h3>
+                        <p>马来西亚 · 印尼 · 菲律宾 · 越南 · 泰国</p>
                     </div>
-                    <div class="market-card">
-                        <div class="market-region">🌏 南亚</div>
-                        <div class="market-countries">巴基斯坦 · 孟加拉 · 斯里兰卡 · 印度</div>
+                    <div class="market-card" data-animate="fade-up" data-delay="150">
+                        <div class="market-flag">🇵🇰</div>
+                        <h3>南亚</h3>
+                        <p>巴基斯坦 · 孟加拉 · 斯里兰卡 · 印度</p>
                     </div>
-                    <div class="market-card">
-                        <div class="market-region">🌍 欧洲</div>
-                        <div class="market-countries">英国 · 荷兰 · 德国 · 西班牙 · 意大利 · 俄罗斯</div>
+                    <div class="market-card" data-animate="fade-up" data-delay="200">
+                        <div class="market-flag">🇬🇧</div>
+                        <h3>欧洲</h3>
+                        <p>英国 · 荷兰 · 德国 · 西班牙 · 意大利 · 俄罗斯</p>
                     </div>
-                    <div class="market-card">
-                        <div class="market-region">🌎 美洲</div>
-                        <div class="market-countries">巴西 · 美国 · 墨西哥 · 智利 · 哥伦比亚</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">资质认证</span>
-                    <h2 class="section-title">国际标准 · 品质认证</h2>
-                </div>
-                <div class="certs-grid">
-                    <div class="cert-card">
-                        <div class="cert-icon">🏅</div>
-                        <h4>ISO 22000</h4>
-                        <p>食品安全管理体系</p>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon">✅</div>
-                        <h4>HACCP</h4>
-                        <p>危害分析与关键控制点</p>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon">🌱</div>
-                        <h4>Global G.A.P.</h4>
-                        <p>全球良好农业规范</p>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon">🕌</div>
-                        <h4>Halal</h4>
-                        <p>清真认证</p>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon">📦</div>
-                        <h4>BRC</h4>
-                        <p>英国零售商协会认证</p>
+                    <div class="market-card" data-animate="fade-up" data-delay="250">
+                        <div class="market-flag">🇧🇷</div>
+                        <h3>美洲</h3>
+                        <p>巴西 · 美国 · 墨西哥 · 智利 · 哥伦比亚</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Process Section -->
+        <!-- Certifications -->
         <section class="section section-alt">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">合作流程</span>
-                    <h2 class="section-title">简单四步 · 轻松采购</h2>
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">资质认证</span>
+                    <h2 class="section-title">国际标准 · 品质保障</h2>
                 </div>
-                <div class="process-grid">
-                    <div class="process-card">
-                        <div class="process-num">01</div>
-                        <h4>在线询价</h4>
-                        <p>填写需求表单或直接联系，我们24小时内回复</p>
+                <div class="certs-row" data-animate="fade-up">
+                    <div class="cert-item">
+                        <div class="cert-badge">ISO</div>
+                        <span>ISO 22000</span>
                     </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-card">
-                        <div class="process-num">02</div>
-                        <h4>确认方案</h4>
-                        <p>根据需求提供产品方案、报价及交期</p>
+                    <div class="cert-item">
+                        <div class="cert-badge">HACCP</div>
+                        <span>HACCP</span>
                     </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-card">
-                        <div class="process-num">03</div>
-                        <h4>签约生产</h4>
-                        <p>签订合同，安排生产加工，全程品控</p>
+                    <div class="cert-item">
+                        <div class="cert-badge">GAP</div>
+                        <span>Global G.A.P.</span>
                     </div>
-                    <div class="process-arrow">→</div>
-                    <div class="process-card">
-                        <div class="process-num">04</div>
-                        <h4>发货交付</h4>
+                    <div class="cert-item">
+                        <div class="cert-badge">HALAL</div>
+                        <span>HALAL</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">BRC</div>
+                        <span>BRC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">合作流程</span>
+                    <h2 class="section-title">四步开启合作</h2>
+                </div>
+                <div class="process-row">
+                    <div class="process-step" data-animate="fade-up">
+                        <div class="step-num">01</div>
+                        <h3>提交需求</h3>
+                        <p>在线询价或邮件联系，24小时内回复</p>
+                    </div>
+                    <div class="process-arrow" data-animate="fade-up">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16h16M18 10l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="process-step" data-animate="fade-up" data-delay="50">
+                        <div class="step-num">02</div>
+                        <h3>确认方案</h3>
+                        <p>提供产品方案、报价单及交期</p>
+                    </div>
+                    <div class="process-arrow" data-animate="fade-up">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16h16M18 10l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="process-step" data-animate="fade-up" data-delay="100">
+                        <div class="step-num">03</div>
+                        <h3>生产发货</h3>
+                        <p>签订合同，安排生产加工及品控</p>
+                    </div>
+                    <div class="process-arrow" data-animate="fade-up">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 16h16M18 10l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="process-step" data-animate="fade-up" data-delay="150">
+                        <div class="step-num">04</div>
+                        <h3>到港交付</h3>
                         <p>港口发运，提供全套清关单据</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact-section">
+        <!-- Contact -->
+        <section id="contact" class="section section-contact">
             <div class="container">
                 <div class="contact-grid">
-                    <div class="contact-info">
+                    <div class="contact-left" data-animate="fade-right">
                         <span class="section-tag">联系我们</span>
                         <h2 class="section-title">开启合作<br>获取专属报价</h2>
-                        <p class="contact-desc">无论您是贸易商、批发商还是食品加工企业，我们都能为您提供最优的大蒜采购方案。留下您的需求，我们将在24小时内回复。</p>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <span class="contact-icon">📧</span>
+                        <p class="contact-desc">
+                            无论您是贸易商、批发商还是食品加工企业，
+                            我们都能为您提供最优的大蒜采购方案。
+                        </p>
+                        <div class="contact-info-list">
+                            <div class="ci-item">
+                                <div class="ci-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14v12H3z" stroke="currentColor" stroke-width="1.5" rx="1"/><path d="M3 7l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </div>
                                 <div>
-                                    <strong>电子邮件</strong>
-                                    <p>benshuailan@gmail.com</p>
+                                    <small>电子邮件</small>
+                                    <strong>benshuailan@gmail.com</strong>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <span class="contact-icon">📞</span>
+                            <div class="ci-item">
+                                <div class="ci-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 9 7 9s7-3.75 7-9c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </div>
                                 <div>
-                                    <strong>联系电话</strong>
-                                    <p>+86 (咨询热线)</p>
+                                    <small>公司地址</small>
+                                    <strong>中国山东省菏泽市成武县</strong>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <strong>公司地址</strong>
-                                    <p>中国山东省菏泽市成武县</p>
+                            <div class="ci-item">
+                                <div class="ci-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8h4v4H2z" stroke="currentColor" stroke-width="1.5"/></svg>
                                 </div>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-icon">🚢</span>
                                 <div>
-                                    <strong>发货港口</strong>
-                                    <p>青岛港 / 连云港</p>
+                                    <small>发货港口</small>
+                                    <strong>青岛港 / 连云港</strong>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-wrapper">
+                    <div class="contact-right" data-animate="fade-left">
                         <form class="contact-form" id="contactForm">
-                            <h3>发送询价</h3>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name">姓名 / 公司名称 *</label>
-                                    <input type="text" id="name" name="name" placeholder="您的姓名或公司名称" required>
+                                    <label>姓名 / 公司名</label>
+                                    <input type="text" name="name" placeholder="您的姓名或公司名称" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">电子邮箱 *</label>
-                                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                    <label>电子邮箱 *</label>
+                                    <input type="email" name="email" placeholder="your@email.com" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="product">意向产品</label>
-                                <select id="product" name="product">
-                                    <option value="">请选择产品</option>
-                                    <option value="pure-white">纯白蒜</option>
-                                    <option value="hybrid">杂交蒜</option>
-                                    <option value="dehydrated">脱水蒜片</option>
-                                    <option value="other">其他/多品采购</option>
-                                </select>
+                                <label>意向产品</label>
+                                <div class="select-wrap">
+                                    <select name="product">
+                                        <option value="">请选择产品品类</option>
+                                        <option>纯白蒜</option>
+                                        <option>杂交蒜</option>
+                                        <option>脱水蒜制品</option>
+                                        <option>多品采购</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="quantity">采购数量</label>
-                                    <input type="text" id="quantity" name="quantity" placeholder="如: 1x40HQ 柜 / 28吨">
+                                    <label>采购数量</label>
+                                    <input type="text" name="qty" placeholder="如: 1x40HQ / 28吨">
                                 </div>
                                 <div class="form-group">
-                                    <label for="country">所在国家</label>
-                                    <input type="text" id="country" name="country" placeholder="您的国家">
+                                    <label>所在国家</label>
+                                    <input type="text" name="country" placeholder="您的国家">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="message">需求描述</label>
-                                <textarea id="message" name="message" rows="4" placeholder="请描述您的具体需求，如规格、数量、目标港口等..."></textarea>
+                                <label>补充说明</label>
+                                <textarea name="msg" placeholder="请描述您的具体需求..." rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-full">
-                                发送询价 <span class="arrow">→</span>
+                                发送询价
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </button>
-                            <p class="form-note">我们会在24小时内通过邮件回复您</p>
+                            <p class="form-hint">我们会在 24 小时内通过邮件回复您</p>
                         </form>
                     </div>
                 </div>
@@ -447,40 +602,42 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3><span class="logo-icon">🧄</span> HUAKO Garlic</h3>
-                    <p>中国优质大蒜出口商，山东产地直供，服务全球客户。</p>
-                    <p class="footer-tagline">Quality Chinese Garlic, Global Trust.</p>
+                    <div class="footer-logo">
+                        <span class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16" cy="20" rx="10" ry="12" fill="#5FA03C"/>
+                                <ellipse cx="16" cy="20" rx="8" ry="10" fill="#7DBF54"/>
+                                <path d="M16 8 C16 4 19 2 20 4 C21 6 18 8 16 8Z" fill="#3D6B1E"/>
+                                <path d="M16 8 C16 5 12 2 11 4 C10 6 13 8 16 8Z" fill="#3D6B1E"/>
+                            </svg>
+                        </span>
+                        <span>HUAKO Garlic</span>
+                    </div>
+                    <p>中国优质大蒜出口商，<br>山东产地直供，服务全球。</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h4>快速导航</h4>
-                        <ul>
-                            <li><a href="#home">首页</a></li>
-                            <li><a href="#about">关于我们</a></li>
-                            <li><a href="#products">产品展示</a></li>
-                            <li><a href="#contact">联系我们</a></li>
-                        </ul>
+                        <h4>导航</h4>
+                        <a href="#about">关于我们</a>
+                        <a href="#products">产品中心</a>
+                        <a href="#why">核心优势</a>
+                        <a href="#contact">联系我们</a>
                     </div>
                     <div class="footer-col">
-                        <h4>产品系列</h4>
-                        <ul>
-                            <li><a href="#products">纯白蒜</a></li>
-                            <li><a href="#products">杂交蒜</a></li>
-                            <li><a href="#products">脱水蒜片</a></li>
-                        </ul>
+                        <h4>产品</h4>
+                        <a href="#products">纯白蒜</a>
+                        <a href="#products">杂交蒜</a>
+                        <a href="#products">脱水蒜制品</a>
                     </div>
                     <div class="footer-col">
-                        <h4>市场区域</h4>
-                        <ul>
-                            <li><a href="#markets">中东/非洲</a></li>
-                            <li><a href="#markets">东南亚</a></li>
-                            <li><a href="#markets">欧洲/美洲</a></li>
-                        </ul>
+                        <h4>联系</h4>
+                        <a href="mailto:benshuailan@gmail.com">benshuailan@gmail.com</a>
+                        <a href="#">山东菏泽成武县</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 HUAKO Garlic. All rights reserved. | 山东菏泽成武县</p>
+                <p>&copy; 2026 HUAKO Garlic. All rights reserved.</p>
             </div>
         </div>
     </footer>
