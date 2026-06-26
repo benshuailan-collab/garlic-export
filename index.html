@@ -40,12 +40,26 @@
                 <span class="logo-text">Garlic Export</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#products">产品中心</a></li>
+                <li><a href="#about" data-i18n="nav.about">关于我们</a></li>
+                <li><a href="#products" data-i18n="nav.products">产品中心</a></li>
                 <li><a href="#why">核心优势</a></li>
-                <li><a href="#markets">全球市场</a></li>
+                <li><a href="#markets" data-i18n="nav.markets">全球市场</a></li>
                 <li><a href="#contact" class="nav-cta">联系我们</a></li>
             </ul>
+            <!-- 语言切换器 -->
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langBtn">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text" id="currentLang">中文</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="#" class="lang-option" data-lang="zh">🇨🇳 中文</a>
+                    <a href="#" class="lang-option" data-lang="en">🇺🇸 English</a>
+                    <a href="#" class="lang-option" data-lang="ru">🇷🇺 Русский</a>
+                    <a href="#" class="lang-option" data-lang="ar">🇸🇦 العربية</a>
+                </div>
+            </div>
             <button class="menu-btn" id="menuBtn" aria-label="菜单">
                 <span></span><span></span><span></span>
             </button>
@@ -74,7 +88,7 @@
                         <span class="tag-dot"></span>
                         中国 · 山东 · 大蒜出口专家
                     </div>
-                    <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                    <h1 class="hero-title" data-animate="fade-up" data-delay="100" data-i18n="hero.title">
                         来自中国产地的<br>
                         <span class="text-gradient">优质大蒜</span><br>
                         走向世界餐桌
@@ -586,10 +600,10 @@
                 <div class="footer-links">
                     <div class="footer-col">
                         <h4>导航</h4>
-                        <a href="#about">关于我们</a>
-                        <a href="#products">产品中心</a>
+                        <a href="#about" data-i18n="nav.about">关于我们</a>
+                        <a href="#products" data-i18n="nav.products">产品中心</a>
                         <a href="#why">核心优势</a>
-                        <a href="#contact">联系我们</a>
+                        <a href="#contact" data-i18n="nav.contact">联系我们</a>
                     </div>
                     <div class="footer-col">
                         <h4>产品</h4>
@@ -610,6 +624,8 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

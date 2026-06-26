@@ -673,3 +673,129 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
 }
+
+/* ==================== 语言切换器样式 ==================== */
+.lang-switcher {
+  position: relative;
+  margin-left: 1.5rem;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lang-text {
+  font-weight: 500;
+}
+
+.lang-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.lang-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: block;
+  padding: 0.8rem 1.2rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.lang-option:last-child {
+  border-bottom: none;
+}
+
+.lang-option:hover {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.lang-option.active {
+  background: var(--green-500);
+  color: #fff;
+}
+
+/* ==================== RTL支持（阿拉伯语） ==================== */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .nav-inner {
+  flex-direction: row-reverse;
+}
+
+body.rtl .nav-links {
+  flex-direction: row-reverse;
+}
+
+body.rtl .footer-grid {
+  direction: rtl;
+}
+
+body.rtl .lang-dropdown {
+  right: auto;
+  left: 0;
+}
+
+/* ==================== 响应式：移动端语言切换器 ==================== */
+@media (max-width: 768px) {
+  .lang-switcher {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .lang-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .lang-dropdown {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  
+  .lang-dropdown.active {
+    transform: translateX(-50%) translateY(0);
+  }
+}
